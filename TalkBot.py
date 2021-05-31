@@ -5,17 +5,17 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 
 # Create the bot
-myBot = ChatBot('MyBot')
+Bot = ChatBot('MyBot')
 
 # Create object for speech recognition
 r1 = sr.Recognizer()
 r2 = sr.Recognizer()
 
 # Set the trainer
-myBot.set_trainer(ChatterBotCorpusTrainer)
+Bot.set_trainer(ChatterBotCorpusTrainer)
 
 # Train the bot
-myBot.train('chatterbot.corpus.english')
+Bot.train('chatterbot.corpus.english')
 
 # Initialize python text to speech converter
 friend = pyttsx3.init()
@@ -35,7 +35,7 @@ while True:
         if my_input == 'bye':                  # If input is bye, then quit
             break
 
-        reply = myBot.get_response(my_input)    # Response by the model
+        reply = Bot.get_response(my_input)    # Response by the model
         print('Bot: ', reply)
         friend.say(reply)                       # Response said by the bot
         friend.runAndWait()
