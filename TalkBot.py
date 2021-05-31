@@ -32,7 +32,7 @@ while True:
             my_input = 'hi'
             # print('You: ', my_input)
         print('You: ', my_input)
-        if my_input == 'quit':                  # If input is quit, then quit
+        if my_input == 'bye':                  # If input is bye, then quit
             break
 
         reply = myBot.get_response(my_input)    # Response by the model
